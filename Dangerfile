@@ -6,7 +6,7 @@ diffs = ::GitDiff.from_string(`git diff --unified=0 HEAD`).files.map { |file|
       line.content.scan(/^\+([^+].*)/)
     end
     target_line = hunk.range_info.original_range.start.to_i
-    {'code': addition_lines, 'target': target_line}
+    {'code': addition_lines.select{ |line| !line.empty? }.join("\n"), 'target': target_line}
   }
   {'file_path': file.b_path, 'hunks': hunks}
 }
