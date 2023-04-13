@@ -11,7 +11,9 @@ jobs:
       with:
         ruby-version: '3.0'
     - name: Bundle install
-      run: gem install bundler && bundle install 
+      run: gem install bundler && bundle install
+    - name: Apply lint
+      run: ./gradlew spotlessKotlinApply
     - name: Run danger
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
