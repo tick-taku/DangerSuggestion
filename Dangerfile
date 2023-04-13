@@ -13,6 +13,6 @@ diffs = ::GitDiff.from_string(`git diff --unified=0 HEAD`).files.map { |file|
 
 diffs.each do |diff|
   diff[:hunks].each do |hunk|
-    suggestion(hunk[:code], file: diff[:file_path], line: diff[:line])
+    suggestion(hunk[:code], file: diff[:file_path], line: hunk[:target])
   end
 end
