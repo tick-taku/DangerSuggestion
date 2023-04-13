@@ -33,6 +33,7 @@ GEM
     git (1.18.0)
       addressable (~> 2.8)
       rchardet (~> 1.8)
+    git_diff (0.4.3)
     kramdown (2.4.0)
       rexml
     kramdown-parser-gfm (1.1.0)
@@ -59,6 +60,7 @@ PLATFORMS
 
 DEPENDENCIES
   danger
+  git_diff
 
 BUNDLED WITH
    2.3.17
