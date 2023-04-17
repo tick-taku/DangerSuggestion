@@ -13,6 +13,16 @@ diffs = ::GitDiff.from_string(`git diff --unified=0 HEAD`).files.map { |file|
 }
 
 diffs.each do |diff|
+  puts diff[:file_path]
+  diff[:hunks].each do |hunk|
+    puts '----- code ------'
+    puts hunk[:code]
+    puts '----- target -------'
+    puts hunk[:target]
+  end
+end
+
+diffs.each do |diff|
   diff[:hunks].each do |hunk|
     markdown("```suggestion\n#{hunk[:code]}\n```", file: diff[:file_path], line: hunk[:target])
   end
