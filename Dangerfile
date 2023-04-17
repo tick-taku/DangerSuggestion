@@ -2,7 +2,7 @@ require 'git_diff'
 
 diffs = ::GitDiff.from_string(`git diff --unified=0 HEAD`).files.map { |file|
   hunks = file.hunks.map { |hunk|
-    addition_lines = hunk.lines.map do |line|
+    addition_lines = hunk.lines.select{|l| l.content.start_with?('+')}.map do |line|
       line.content.scan(/^\+([^+].*)/)
     end
     target_range = hunk.range_info.original_range
