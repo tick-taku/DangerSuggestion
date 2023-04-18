@@ -24,6 +24,6 @@ end
 
 diffs.each do |diff|
   diff[:hunks].each do |hunk|
-    markdown("```suggestion\n#{hunk[:code]}\n```", file: diff[:file_path], line: hunk[:target])
+    markdown("```suggestion\n#{hunk[:code]}\n```", file: diff[:file_path], line: '31-32')
   end
 end
