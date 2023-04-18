@@ -21,6 +21,7 @@ jobs:
     - name: Apply lint
       run: ./gradlew spotlessKotlinApply
     - name: Run danger
+      uses: reviewdog/action-suggester@v1
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      run: danger
+        tool_name: spotless
