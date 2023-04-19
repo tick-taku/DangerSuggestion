@@ -61,6 +61,7 @@ PLATFORMS
 DEPENDENCIES
   danger
   git_diff
+  octokit
 
 BUNDLED WITH
    2.3.17
