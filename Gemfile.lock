@@ -24,6 +24,7 @@ GEM
       no_proxy_fix
       octokit (~> 5.0)
       terminal-table (>= 1, < 4)
+    diff-suggester (0.1.1)
     faraday (2.7.4)
       faraday-net_http (>= 2.0, < 3.1)
       ruby2_keywords (>= 0.0.4)
@@ -33,7 +34,6 @@ GEM
     git (1.18.0)
       addressable (~> 2.8)
       rchardet (~> 1.8)
-    git_diff (0.4.3)
     kramdown (2.4.0)
       rexml
     kramdown-parser-gfm (1.1.0)
@@ -60,8 +60,7 @@ PLATFORMS
 
 DEPENDENCIES
   danger
-  git_diff
-  octokit
+  diff-suggester
 
 BUNDLED WITH
    2.3.17
