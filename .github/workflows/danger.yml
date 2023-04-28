@@ -20,7 +20,9 @@ jobs:
       run: gem install bundler && bundle install
     - name: Apply lint
       run: ./gradlew spotlessKotlinApply
-    - name: Run danger
+    - name: Run suggester
       env:
+        REPOSITORY: ${{ github.repository }}
+        PR_NUMBER: ${{ github.event.number }}
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      run: danger
+      run: ruby scripts/suggest.rb
