@@ -6,3 +6,7 @@ suggester = DiffSuggester::Suggester.new(
 	access_token: ENV["GITHUB_TOKEN"]
 )
 suggester.suggest
+
+base_url = ENV["GITHUB_BASE_URL"]
+puts base_url
+puts base_url.blank?
